@@ -8,8 +8,10 @@ public class Task {
 	@Id
 	private int id;
 	private boolean reminder;
-	private String task;
-	private String time;
+	private String text;
+	private String month;
+	private String day;
+	private String year;
 	
 	public int getId() {
 		return id;
@@ -23,22 +25,35 @@ public class Task {
 	public void setReminder(boolean reminder) {
 		this.reminder = reminder;
 	}
-	public String getTask() {
-		return task;
+	public String getText() {
+		return text;
 	}
-	public void setTask(String task) {
-		this.task = task;
+	public void setTask(String text) {
+		this.text = text;
 	}
-	public String getTime() {
-		return time;
+	public String getMonth() {
+		return month;
 	}
-	public void setTime(String time) {
-		this.time = time;
+	public void setMonth(String month) {
+		this.month = month;
 	}
-
+	public String getDay() {
+		return day;
+	}
+	public void setDay(String day) {
+		this.day = day;
+	}
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
 	@Override
 	public String toString() {
-		return "Task [id= " + id + ", reminder=" + reminder + "task=" + task + ", time=" + time + "]";
+		return "Task [id=" + id + ", reminder=" + reminder + ", task=" + text + ", month=" + month + ", day=" + day
+				+ ", year=" + year + "]";
 	}
+	
 	
 }
