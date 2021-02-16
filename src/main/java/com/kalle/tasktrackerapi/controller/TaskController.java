@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,9 +30,11 @@ public class TaskController {
 	/*
 	 * Lisää tehtävä
 	 */
-	@PostMapping(path = "/saveTask")
-	public void saveTask(String task) {
+	@PostMapping("/saveTask")
+	public Task saveTask(@RequestBody Task task) {
 		System.out.println(task);
+		repo.save(task);
+		return task;
 	}
 	
 	/*
